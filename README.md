@@ -4,80 +4,115 @@
     <title>X User Directory</title>
     <style>
         body {
-            font-family: sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 20px;
-            background-color: #f4f4f4;
+            background-color: #f0f8ff;
+            color: #333;
         }
 
         h1 {
             text-align: center;
-            color: #333;
+            color: #2c3e50;
             margin-bottom: 20px;
+            animation: fadeIn 1s ease-out; /* Fade-in animation */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         form {
             background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+            border: 1px solid #e0e0e0;
+            transition: transform 0.3s ease; /* Subtle hover effect */
+        }
+
+        form:hover {
+            transform: translateY(-5px);
         }
 
         label {
             display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
         }
 
         input[type="text"] {
-            width: calc(100% - 22px); /* Adjust for padding and border */
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #d1d1d1;
+            border-radius: 6px;
             box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease; /* Input focus effect */
+        }
+
+        input[type="text"]:focus {
+            border-color: #3498db;
         }
 
         button {
-            background-color: #007bff;
+            background-color: #3498db;
             color: white;
-            padding: 10px 15px;
+            padding: 12px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
             width: 100%;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease; /* Hover effect */
         }
 
         button:hover {
-            background-color: #0056b3;
+            background-color: #2980b9;
+            transform: scale(1.05);
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
             background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e0e0e0;
+            animation: slideIn 1s ease-out; /* Slide-in animation */
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(-50px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
 
         th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
             text-align: left;
+            font-size: 16px;
         }
 
         th {
-            background-color: #f2f2f2;
-            font-weight: bold;
+            background-color: #ecf0f1;
+            font-weight: 600;
+            color: #333;
         }
 
         a {
-            color: #007bff;
+            color: #3498db;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         a:hover {
             text-decoration: underline;
+            color: #2980b9;
         }
     </style>
 </head>
@@ -112,6 +147,7 @@
     </table>
 
     <script>
+        // JavaScript remains the same
         function addUser() {
             const name = document.getElementById("name").value;
             const xUsername = document.getElementById("xUsername").value;
